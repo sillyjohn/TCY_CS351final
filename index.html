@@ -6,20 +6,41 @@
         <title>CS351 Final Project</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="menu.css">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
+        <script>
+        $(function() {
+        $(".toggle").on("click", function() {
+            if ($(".item").hasClass("active")) {
+                $(".item").removeClass("active");
+            } else {
+                $(".item").addClass("active");
+            }
+        });
+    });
+        </script>
     </head>
     <body>
-       <h1>Welcome to Tsoi Chun Yin Personal Website</h1>
-            <nav>
-                <ul class="nav_links">
-                    <li><a href="#">BIO</a></li>
-                    <li><a href="#">Resume</a></li>
-                    <li><a href="#">Projects</a></li>
-                </ul>  
-    
-            </nav>
-        Hi there, Here is a little self introduction. 
-        My name is Tsoi Chun Yin. You can call me John for convenience. I am an International student and currently I am studying in CSUEB to pursue for a Computer Engineering degree. 
-        <script src="" async defer></script>
+        <nav>
+        <ul class="menu">
+          
+                <li class="item"><a href="#">BIO</a></li>
+                <li class="item"><a href="#">Resume</a></li>
+                <li class="item"><a href="#">Projects</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+        
+        </ul>
+    </nav>
+        <main>
+                    <h1>Welcome to Tsoi Chun Yin Personal Website</h1>
+
+            Hi there, Here is a little self introduction. 
+            My name is Tsoi Chun Yin. You can call me John for convenience. I am an International student and currently I am studying in CSUEB to pursue for a Computer Engineering degree. 
+         
+        </main>
+       
     </body>
 </html>

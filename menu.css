@@ -1,0 +1,105 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Sigmar&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sigmar', cursive;
+    
+}
+body{
+    background-color: bisque;
+}
+main{
+    text-align: center;
+}
+nav {
+    background: #222;
+    padding: 5px 20px;
+  }
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+a:hover{
+    text-decoration: underline;
+    color: orange;
+}
+.menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+
+.menu li{
+    font-size: 16px;
+    
+}
+.menu li a{
+    display: block;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+.toggle{
+    cursor: pointer;
+    order:1;
+}
+.item{
+    width:100%;
+    text-align: center; 
+    order:2;
+    display: none;
+}
+.item.active {
+    display: block;
+  }
+.bars {
+    background: #999;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  .bars:before,
+  .bars:after {
+    background: #999;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  .bars:before {
+    top: 5px;
+  }
+  .bars:after {
+    top: -5px;
+  }
+
+  
+/*desktop*/
+  @media all and (min-width:700px){
+    .item{
+        display: block;
+        width:auto;
+        order: 1;
+    }
+    .toggle{
+        display: none;
+    }
+    .menu li.item{
+        padding: 10px 50px;
+    }
+  }
