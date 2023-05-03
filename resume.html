@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CS351 FP Resume</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="menu.css">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
+        <script>
+        $(function() {
+        $(".toggle").on("click", function() {
+            if ($(".item").hasClass("active")) {
+                $(".item").removeClass("active");
+            } else {
+                $(".item").addClass("active");
+            }
+        });
+        });
+        </script>
+       <div id="adobe-dc-view"></div>
+       <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+       <script type="text/javascript">
+           document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+               var adobeDCView = new AdobeDC.View({clientId: "0bfb170b50ce4b098799e394bd6b4f9a", divId: "adobe-dc-view"});
+               adobeDCView.previewFile({
+                   content:{location: {url: "C:\Users\John Taoi\Desktop\New folder\TCY_CS351final\TCY_CS351final\resume.pdf"}},
+                   metaData:{fileName: "resume.pdf"}
+               
+            });
+           });
+       </script>
+    </head>
+    <body>
+        <nav>
+            <ul class="menu">
+                    <li class="item"><a  href="index.html" target="_self">BIO</a></li>
+                    <li class="item"><a href="resume.html" target="_self">Resume</a></li>
+                    <li class="item"><a href="#">Projects</a></li>
+                    <li class="toggle"><span class="bars"></span></li>
+            </ul>
+        </nav>
+        
+    </body>
+</html>
