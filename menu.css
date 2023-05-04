@@ -11,9 +11,7 @@
 body{
     background-color: bisque;
 }
-.pdfviewer{
-    text-align: center;
-}
+
 main{
     text-align: center;
 }
@@ -25,6 +23,19 @@ nav {
 ul{
     list-style: none;
 }
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+iframe {
+  position: absolute;
+  top: 10%;
+  left: 9%;
+  border: 0;
+}
+
+
 a{
     text-decoration: none;
     color: whitesmoke;
