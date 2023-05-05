@@ -7,14 +7,12 @@ function addClass() {
 
 /*gpa = sum of (grade * credit)/total credit */
 function calculateGPA() {
-    
     let grades = getGrade();
     console.log("The grades are: " + grades);
     let credits = getCredits(); 
     console.log("The credits are: " + credits);
     let gpa = 0;
     let gradePoints = 0;
-    let totalCredit = 0;
     let grade = 0;
     let credit = 0;
     for(let i = 0; i < credits.length;i++){
@@ -23,7 +21,7 @@ function calculateGPA() {
         totalCredit += credit;
         gradePoints += (grade * credit);
     }
-    gpa = gradePoints/totalCredit;
+   
     let output = document.getElementById("result");
     output.innerHTML = "Your GPA is: " + gpa;
 }
@@ -39,12 +37,27 @@ for (let i = 0; i < creditInputs.length; i++) {
 return credits;
 }
 
+
+
 function getGrade() {
+		let gradePoint = 0;
+    let totalCredit = 0;
+    let totalCreditArr = [];
     let gradeInputs = document.querySelectorAll("input[name='grade[]']");
     let gradeValues = [];
-
+    let grades = [];
+   	let creditInputs = document.querySelectorAll("input[name='credit[]']");
+    let credits = [];
+		creditInputs.forEach(function(element,index){
+    	const val = element.value; 
+      credits.push(element.value);
+      totalCreditArr.push(element.value);
+    })
+    gradeInputs.forEach(function(element, index) {
+        grades.push(element.value);
+    });
     for (let i = 0; i < gradeInputs.length; i++) {
-        console.log("grades"+gradeInputs[i].value);
+        console.log("grades inside function"+gradeInputs[i].value);
         switch(gradeInputs[i].value){
             case "A+": 
             gradeValues.push(4.0);
@@ -103,5 +116,23 @@ function getGrade() {
                 
         } 
     }
-    return gradeValues;
+   	
+    console.log("gradevalue:[" + gradeValues+"]")
+    console.log("gradeLength:[" + gradeValues.length+"]")
+    console.log("credit:[" + credits+"]")
+		//grade point
+    const len = gradeValues.length;
+    for(let i = 0; i <len;i++){
+    	gradePoint += (gradeValues.pop() * credits.pop()); 
+			totalCredit+= parseInt(totalCreditArr.pop()); 
+      console.log("Ran loop")
+    }
+     console.log("total credit:"+totalCredit);
+     console.log("grad point :[" + gradePoint +"]");
+   let gpa = gradePoint/totalCredit;
+		
+   let output = document.getElementById("result");
+   output.innerHTML = "Your GPA is: " + gpa.toFixed(2);
 }
+
+
