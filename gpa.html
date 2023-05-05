@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CS351 Final Project</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="menu.css">
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
+        <script>
+        $(function() {
+        $(".toggle").on("click", function() {
+            if ($(".item").hasClass("active")) {
+                $(".item").removeClass("active");
+            } else {
+                $(".item").addClass("active");
+            }
+         });
+        });
+        </script>
+
+    </head>
+    <body>
+        <nav>
+        <ul class="menu">
+          
+                <li class="item"><a href="index.html">BIO</a></li>
+                <li class="item"><a href="resume.html">Resume</a></li>
+                <li class="item"><a href="gpa.html">GPA Calculator</a></li>
+                <li class="toggle"><span class="bars"></span></li>
+        
+        </ul>
+    </nav>
+    <form id="form">
+        <button type="button" onclick="calculateGPA()">Calculate</button><br>
+        <button type="button" onclick="addClass()">Add classes</button><br>
+        
+        <div class="class-template">
+          <label>Number of Credit:</label>
+          <input type="number" name="credit[]"  min="0" max="10">
+          <label>Grade:</label>
+          <select name="grade[]">
+            <option value="">Select a grade</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B+</option>
+            <option value="C">C+</option>
+            <option value="C">C</option>
+            <option value="C">C-</option>
+            <option value="D">D+</option>
+            <option value="D">D</option>
+            <option value="D">D-</option>
+            <option value="F">F</option>
+          </select><br>
+        </div>
+        
+       
+      </form><br>
+      <div id="result"></div>
+      <script src="gpa.js"></script>
+      
+    </body>
+</html>
