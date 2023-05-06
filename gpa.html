@@ -36,14 +36,20 @@
         </ul>
     </nav>
     <form id="form">
-        <button type="button" onclick="calculateGPA()">Calculate</button><br>
-        <button type="button" onclick="addClass()">Add classes</button><br>
-        
+        <div id = "buttons">
+            <button type="button" onclick="addClass()">Add More Classes</button><br>
+
+            <button type="button" onclick="calculateGPA()">Calculate</button><br>
+        </div>
+        <p >Please type in FULL CAPITAL</p>
+         <p >Example: A+,B-</p>
+
         <div class="class-template">
           <label>Number of Credit:</label>
           <input type="number" name="credit[]"  min="0" max="10">
           <label>Grade:</label>
-          <select name="grade[]">
+          <input type = "text" name = "grade[]">
+          <!-- <select name="grade[]">
             <option value="">Select a grade</option>
             <option value="A+">A+</option>
             <option value="A">A</option>
@@ -58,7 +64,7 @@
             <option value="D">D</option>
             <option value="D">D-</option>
             <option value="F">F</option>
-          </select><br>
+          </select><br> -->
         </div>
         
        
